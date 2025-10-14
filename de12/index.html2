@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>路上観察</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+ <h1>第二回<h1/>
+  <!-- 見出し -->
+
+  <section class="hero">
+
+    <h1>路上観察</h1>
+
+    <p>見過ごしていた風景に、もう一度目を向ける。</p>
+
+  </section>
+
+
+
+  <!-- コンテンツ -->
+
+  <section class="content">
+
+
+
+    <!-- 1枚目 -->
+
+    <div class="card">
+
+      <img src= alt="KIOSQUE CC">
+
+      <div class="text">
+
+        <h2>KIOSQUE CC</h2>
+
+        <p>渋谷のセレクトショップ。真っ赤な入口に洗練されたものを感じる。</p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 2枚目 -->
+
+    <div class="card">
+
+      <img src alt="喫茶店">
+
+      <div class="text">
+
+        <h2>喫茶店</h2>
+
+        <p>横浜の喫茶店。昔ながらの喫茶室の良さを看板から感じる。</p>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- 3枚目（仮） -->
+
+    <div class="card">
+
+   
+
