@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>路上観察データ可視化</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: "Hiragino Sans", sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      text-align: center;
+      margin: 40px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    p {
+      color: #666;
+    }
+    canvas {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>路上観察データ可視化</h1>
+  <p>観察時間：7分　／　通行人の靴の色分布</p>
+
+  <canvas id="pieChart"></canvas>
+  <canvas id="barChart"></canvas>
+
+  <script>
+    // データを定義
+    const colorLabels = ["青系", "赤系", "黒系", "茶系", "白系"];
+    const colorCounts = [2, 2, 51, 2, 13];
+    const colorSet = ["#3b83bd", "#d23c3c", "#000000", "#8b5a2b", "#f5f5f5"];
+
+    // 円グラフ
+    const ctxPie = document.getElementById("pieChart").getContext("2d");
+    new Chart(ctxPie, {
+      type: "pie",
+      data: {
+        labels: colorLabels,
+        datasets: [{
+          data: colorCounts,
+          backgroundColor: colorSet,
+          borderColor: "#fff",
+          borderWidth: 2
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "通行人の服の色（割合）",
+            font: { size: 18 }
+          },
+          legend: {
+            position: "bottom"
+          }
+        }
+      }
+    });
+
+    // 棒グラフ
+    const ctxBar = document.getElementById("barChart").getContext("2d");
+    new Chart(ctxBar, {
+      type: "bar",
+      data: {
+        labels: colorLabels,
+        datasets: [{
+          label: "人数",
+          data: colorCounts,
+          backgroundColor: colorSet,
+          borderColor: "#888",
+          borderWidth: 1
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "服の色ごとの人数（観察7分間）",
+            font: { size: 18 }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: { display: true, text: "人数" }
+          },
+          x: {
+            title: { display: true, text: "色系統" }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
