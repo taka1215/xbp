@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天気予報アプリ（Python × OpenWeatherMap API）</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      line-height: 1.8;
+      margin: 40px;
+      background-color: #f4f7fb;
+      color: #333;
+    }
+    h1 {
+      color: #0078d7;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #444;
+      border-left: 6px solid #0078d7;
+      padding-left: 10px;
+    }
+    pre {
+      background-color: #1e1e1e;
+      color: #dcdcdc;
+      padding: 15px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+    }
+    .example {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+    a {
+      color: #0078d7;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌦 天気予報アプリ（Python × OpenWeatherMap API）</h1>
+
+  <h2>1. OpenWeatherMap APIの説明</h2>
+  <p>
+    <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a> は、世界中の気象データを無料で提供しているサービスです。<br>
+    開発者向けにAPI（Application Programming Interface）を公開しており、Pythonなどのプログラムから
+    <strong>都市名を指定するだけでリアルタイムの天気情報</strong>を取得できます。
+  </p>
+
+  <ul>
+    <li>世界中の都市の現在の天気に対応</li>
+    <li>毎分60回までリクエスト可能（無料プラン）</li>
+    <li>JSON形式で気温・湿度・風速などの情報を取得可能</li>
+  </ul>
+
+  <h2>2. Pythonコードの例</h2>
+  <p>以下のコードを VS Code に貼り付けて保存してください。ファイル名は <code>weather_app.py</code> にします。</p>
+
+  <pre><code># weather_app.py
+# 天気予報アプリ（Python × OpenWeatherMap API）
+
+import requests
+
+# ===== 自分のOpenWeatherMap APIキーをここに入力 =====
+API_KEY = "ここに自分のAPIキーを入れてください"
+# ======================================================
+
+BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
+
+def get_weather(city_name):
+    """指定した都市の天気情報を取得して表示"""
+    params = {
+        "q": city_name,
+        "appid": API_KEY,
+        "lang": "ja",       # 日本語で出力
+        "units": "metric"   # 摂氏（℃）で表示
+    }
+
+    response = requests.get(BASE_URL, params=params)
+
+    # ステータスコード200なら成功
+    if response.status_code == 200:
+        data = response.json()
+        weather = data["weather"][0]["description"]
+        temp = data["main"]["temp"]
+
+        print(f"\n🌤 {city_name}の現在の天気情報")
+        print("------------------------------")
+        print(f"天気：{weather}")
+        print(f"気温：{temp}℃")
+        print("------------------------------\n")
+
+    else:
+        print("❌ 都市名が見つかりませんでした。")
+
+
+if __name__ == "__main__":
+    print("=== 天気予報アプリ (OpenWeatherMap API) ===")
+    city = input("都市名を入力してください: ")
+    get_weather(city)
+</code></pre>
+
+  <h2>3. 甲府市を例に実行してみる</h2>
+  <div class="example">
+    <pre><code>=== 天気予報アプリ (OpenWeatherMap API) ===
+都市名を入力してください: 甲府
+
+🌤 甲府の現在の天気情報
+------------------------------
+天気：晴れ
+気温：17.3℃
+------------------------------</code></pre>
+    <p>※気温や天気の内容は実行時の状況によって変わります。</p>
+  </div>
+
+  <h2>参考リンク</h2>
+  <ul>
+    <li><a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap公式サイト</a></li>
+    <li><a href="https://docs.python.org/ja/3/" target="_blank">Python公式ドキュメント</a></li>
+  </ul>
+
+</body>
+</html>
