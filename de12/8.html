@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>天気と売上の相関分析</title>
+  <style>
+    body {
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      background-color: #f6f9fc;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(120deg, #0099ff, #00c6ff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-left: 6px solid #00aaff;
+      padding-left: 10px;
+      margin-top: 40px;
+      color: #00aaff;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    pre {
+      background: #222;
+      color: #eee;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    ul {
+      background: #f0faff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0 20px 0;
+      color: #555;
+    }
+    a.link {
+      display: inline-block;
+      background: #00aaff;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    a.link:hover {
+      background: #0088cc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>天気と売上の相関分析</h1>
+    <p>POSデータ × 商品データ × 天気データ の統合分析</p>
+  </header>
+
+  <div class="container">
+    <h2>1. 分析概要</h2>
+    <p>
+      POSデータ・商品データ・天気データを結合し、
+      「<strong>気温</strong>」「<strong>降水量</strong>」「<strong>天気区分</strong>」が
+      売上にどれほど影響するかを分析しました。
+    </p>
+
+    <h2>2. 使用した Python コード（VS Code 用）</h2>
+    <p>以下は VS Code で実行した Python コード。</p>
+    <img src="images/original-D4B87E83-6B85-490F-8EC1-3A0A26FA0D62.jpeg" alt="Python コード">
+
+    <h2>3. 分析グラフ</h2>
+    <p>下の図は、気温と売上の散布図の例です。（VS Code の Python 実行結果を貼り付け）</p>
+    <img src="images/original-C89C4B7D-D1C3-488E-9A94-477E513EA663.jpeg" alt="気温と売上の散布図">
+    <p>（例：気温が上がるほど売上も上昇傾向）</p>
+
+    <h2>4. 結果まとめ</h2>
+    <ul>
+      <li>天気が良いと売り上げも良く、気温が高いほどさらに売り上げがあがることがわかった。</li>
+      <li>雨の日は来店数が減少し、暖かいものが売れやすいことが明確にわかった。</li>
+      <li>天気・気温ごとに商品別の特徴がわかりやすかった。</li>
+    </ul>
+
+    <h2>リンク</h2>
+    <p>
+        6班のデータ分析したパワポはこちらから
+    </p>
+    <p>
+      <a href="images/589237648984899928_xbp　データ分析　6班 2.pptx" target="_blank">https://example.com</a>
+    </p>
+  </div>
+
+  <footer>
+    <p>© 2025 天気×売上分析プロジェクト</p>
+  </footer>
+
+</body>
+</html>
