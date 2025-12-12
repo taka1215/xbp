@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Design for Others</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Design for Others</h1>
+      <nav class="site-nav">
+        <a href="#problem">よく見る事象</a>
+        <a href="#sketches">構想スケッチ</a>
+        <a href="#works">作品</a>
+        <a href="#files">設計ファイル</a>
+        <a href="#about">作品について</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="problem" class="card">
+      <h2>◯ よく見る事象</h2>
+      <p>
+        電車で仮眠を取る人が多く、その人たちが快適に休めるスペースを提供できないかという観点から本プロジェクトが始まった。
+        しかし、電車内に新たに仮眠スペースを設けることは現実的ではないため、
+        より身近な学校や作業スペースへ視点を移し、誰でも入りやすく、分かりやすく、安心して休息できる空間づくりを目標とした。
+        また、学校内では「入っていい部屋なのか分からない」という心理的ハードルも存在するため、
+        その問題を解消しながら快適な休憩空間をデザインすることを目的とした。
+      </p>
+    </section>
+
+    <section id="sketches" class="card">
+      <h2>◯ 構想段階のスケッチ</h2>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/oje.jpeg" width="300"     alt="構想スケッチ">
+          <figcaption>構想スケッチ</figcaption>
+
+          <img src="images/ihni.jpeg" width="300"  alt="作成過程">
+          <figcaption>作成過程  </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="works" class="card">
+      <h2>◯ 実際に作った作品</h2>
+
+      <div class="gallery">
+        <figure>
+          <img src="images/ijij.jpeg" width="300"      alt="作品写真1">
+          <figcaption>作品写真1</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="files" class="card">
+      <h2>◯ 設計ファイル</h2>
+      <p>
+        ドアノブに引っ掛けて使用することを前提とし、上部にフック状のカーブを持つプレートを設計した。
+        ドアノブの太さに合わせるため、複数回のサイズ調整を行いながら形状を確定させた。
+      </p>
+
+      <ul class="files-list">
+        <li><a href="files/" download>plate_design_v1.svg</a></li>
+      </ul>
+    </section>
+
+    <section id="about" class="card">
+      <h2>◯ 作品について</h2>
+      <p>
+        文字を読まなくても休めるスペースであると直感的に分かるよう、ピクトグラムを主な視覚要素として採用した。
+        さらに、利用者の気持ちが軽くなるよう、疲れを癒すメッセージを添えたデザインとした。
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© Design for Others — Project Page</small>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        img.src = 'data:image/svg+xml;utf8,' +
+          encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240"><rect width="100%" height="100%" fill="#e5e5e5"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#666" font-size="16">画像をここに配置する必要がある</text></svg>');
+      });
+    });
+  </script>
+
+</body>
+</html>
