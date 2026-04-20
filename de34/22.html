@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Arduinoレポート</title>
+</head>
+<body>
+
+    <h1>第一回 ARDUINO</h1>
+
+    <h2>arduinoとは</h2>
+    <p>
+        Arduinoとは入出力ポートがあるマイコンボード。<br>
+        プログラムを書いて、センサーの値を読み込んだり、モーターを動かしたり、LEDを光らせたりと電子工作といわれることが簡単にできる。
+    </p>
+
+    <h2>arduinoでLチカ</h2>
+    <p>
+        LチカとはLEDをチカチカさせること。
+    </p>
+
+    <img src="./images/original-D4B87E83-6B85-490F-8EC1-3A0A26FA0D62.jpeg" alt="Lチカの写真">
+
+    <p>以下のようなプログラムでLチカ</p>
+
+    <pre>
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+    </pre>
+
+</body>
+</html>
