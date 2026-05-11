@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title> 第3回　　Flaskについて</title>
+
+    <styl３回
+
+        body{
+            background-color: #f3f3f3;
+            font-family: sans-serif;
+            margin: 30px;
+            line-height: 1.8;
+        }
+
+        h1{
+            font-size: 55px;
+            border-bottom: 4px solid #5b8cff;
+            padding-bottom: 10px;
+            color: #222;
+        }
+
+        p{
+            font-size: 28px;
+            color: #222;
+        }
+
+        ul{
+            font-size: 28px;
+        }
+
+        .code{
+            background-color: #dfe6ee;
+            padding: 25px;
+            border-radius: 20px;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Flaskとは？</h1>
+
+    <p>
+        Flaskは、Pythonを使ってWebアプリケーションを開発できるフレームワークです。
+        軽量でシンプルな構造になっているため、
+        初心者でも扱いやすく、必要な機能を自由に追加できる特徴があります。
+    </p>
+
+    <h1>今回制作したプログラム</h1>
+
+    <p>
+        今回はCSVファイルを読み込み、
+        その内容をWebページに表示するプログラムを制作しました。
+        また、場所の情報をGoogleマップのリンクへ変換し、
+        クリックすると地図を開けるように工夫しました。
+    </p>
+
+    <h1>工夫した点</h1>
+
+    <ul>
+        <li>CSVデータをリスト形式で取得した</li>
+        <li>位置情報をGoogleマップのURLへ変換した</li>
+        <li>条件分岐を使い表示内容を変更した</li>
+    </ul>
+
+    <h1>データ表示</h1>
+
+    <div class="code">
+
+        {% for data in mmlist %}<br>
+
+        {% if data[1] == "場所" %}
+
+        {{ data[1] }}<br>
+
+        {% elif data|length > 3 and data[3] %}
+
+        {{ data[1] }}<br>
+
+        {% else %}
+
+        {{ data[1] }}<br>
+
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+    <h1>まとめ</h1>
+
+    <p>
+        Flaskを使用することで、
+        Pythonによるデータ処理とWebページの表示を簡単に連携させることができました。
+        今回の制作を通して、普段利用しているWebアプリケーションが、
+        バックエンドとフロントエンドの2つの要素によって成り立っていることも理解できました。
+    </p>
+
+    <p>
+        また、条件によって表示内容を変化させる機能を作成したことで、
+        SNSやショッピングサイトなどの身近なWebサービスにも、
+        同じような仕組みが利用されているのではないかと感じました。
+    </p>
+
+    <p>
+        普段は利用者として見ることが多かったWebページの裏側を知ることができ、
+        PythonとHTMLを組み合わせて実際に動作するページを作れたことがとても面白かったです。
+        今後はデザイン面の工夫やデータベースとの連携にも挑戦し、
+        より実用的なWebアプリケーションを制作していきたいです。
+    </p>
+
+</body>
+</html>
