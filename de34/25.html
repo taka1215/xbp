@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>BizTech Portal レポート</title>
+
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+        }
+
+        header{
+            background-color: #222;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .container{
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        section{
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2{
+            border-left: 6px solid #333;
+            padding-left: 10px;
+        }
+
+        img{
+            width: 100%;
+            max-width: 700px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        iframe{
+            width: 100%;
+            max-width: 700px;
+            height: 400px;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+
+        pre{
+            background-color: #eee;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 10px;
+        }
+
+        footer{
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>BizTech Portal レポート</h1>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>① BizTech Portalとは</h2>
+
+            <p>
+                BizTech Portalとは、ビジネスとテクノロジーを組み合わせた学習を行うための環境であり、
+                実際にアプリケーションを作成しながらプログラミングやデータ活用を学ぶことができる。
+                特にPythonやFlaskなどを用いて、実用的なWebアプリを作る経験ができる点が特徴である。
+            </p>
+        </section>
+
+        <section>
+            <h2>② 作成したアプリの概要</h2>
+
+            <p>
+                気温別の服装を提案してくれるアプリを作成した。
+                利用者が分かりやすいようにトップス、アウター、ボトムスの
+                3種類を表示し、その気温がどのような体感なのかも表示するようにした。
+            </p>
+        </section>
+
+        <section>
+            <h2>③ Python（Flask）コード</h2>
+
+            <p>ここにコードのスクリーンショットを貼る。</p>
+
+            <!-- 画像を入れる -->
+            <img src="images/processed-42959EBD-6897-4C7F-974A-692A66720F65.jpeg" alt="Pythonコード画像">
+
+            <!-- コード直接貼りたい場合 -->
+            <!--
+            <pre>
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == "__main__":
+    app.run(debug=True)
+            </pre>
+            -->
+        </section>
+
+        <section>
+            <h2>④ 実行画面</h2>
+
+            <img src="images/processed-826C8594-9599-417F-AA57-7B37FB64FB82.jpeg" alt="実行画面">
+        </section>
+
+        <section>
+            <h2>⑤ YouTube</h2>
+
+            <p>作成したアプリの動画を掲載。</p>
+
+            <!-- YouTube埋め込み -->
+            <iframe 
+                src="https://www.youtube.com/embed/動画ID"
+                title="YouTube video player"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <h2>⑥ 道用先生へ</h2>
+
+            <p>
+                今回初めてBizTech Portalを扱い、こんなにも簡単にアプリを開発できるのかと関心しました。
+                したいことを打ち込めばすぐ形になるという点は、今までの経験上、
+                プログラムは難しいものという印象があったため、とても驚きました。
+                また、分かりやすく開発を進めることができたため、
+                プログラムに対する苦手意識も少なくなりました。
+                実際にアプリが完成し、自分で動かしてみた時には達成感もあり、
+                改めてプログラムの楽しさを実感しました。
+            </p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>2026 BizTech Portal Report</p>
+    </footer>
+
+</body>
+</html>
